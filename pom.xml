@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.atlassian.confluence.plugins</groupId>
     <artifactId>hello-blueprint</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
 
     <organization>
         <name>Atlassian</name>
@@ -97,7 +97,7 @@
     </build>
 
     <properties>
-        <confluence.version>5.0-m10</confluence.version>
+        <confluence.version>5.0-m11</confluence.version>
         <confluence.data.version>4.3</confluence.data.version>
         <amps.version>4.1.1</amps.version>
     </properties>
