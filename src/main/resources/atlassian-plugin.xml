@@ -81,6 +81,13 @@
     <resource type="i18n" name="i18n" location="com/atlassian/confluence/plugins/hello_blueprint/i18n"/>
 
     <!--
+        Not strictly needed, just illustrates how a component/Spring-bean can be supplied to a Context Provider.
+    -->
+    <component key="hello-service" class="com.atlassian.confluence.plugins.hello_blueprint.DefaultHelloService">
+        <interface>com.atlassian.confluence.plugins.hello_blueprint.HelloService</interface>
+    </component>
+
+    <!--
         (optional)
 
         Provides JS and Soy resources if this Blueprint uses a JavaScript "wizard" to supply template variables, rather
