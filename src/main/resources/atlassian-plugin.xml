@@ -5,22 +5,43 @@
         <vendor name="${project.organization.name}" url="${project.organization.url}" />
     </plugin-info>
 
-    <!-- create-dialog-web-items allow the dialog launched from clicking the gloabl "Creaet" button to be extended. -->
+
+    <!--
+        create-dialog-web-item allows the dialog launched by clicking the global "Create" button to be extended.
+
+            i18n-name-key: (required) the i18n key for the name of the Blueprint that will be displayed in the dialog
+
+            description: (required) the i18n key for the description of the Blueprint that will be displayed in the dialog.
+                         May end up being used in searches
+
+            resource: (required) the icon to be displayed in the dialog, must be a 200 x 150 px PNG
+
+            creator-key: (optional) if present, binds this web-item to the content-creator with the key. If omitted, no
+                         binding occurs and custom JavaScript + Java must create the content
+    -->
     <create-dialog-web-item key="hello-blueprint-item" i18n-name-key="confluence.hello.blueprint.name"
             creator-key="hello-blueprint-creator">
         <description key="confluence.hello.blueprint.description"/>
         <resource name="icon" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/images/preview.png"/>
     </create-dialog-web-item>
 
+
     <!--
          content-creator groups together the main blueprint concepts:
-         content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
-         collector-key: (required) this is the name of the label that will be added to all content created from this blueprint
-         collector-template-key: (optional) this is the moduleKey of the <content-template> that will be used to create an index page. If none is provided, a default template will be used.
-         create-result: (optional) can be assigned the value of "view" or "edit".
-            "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
-            "edit": user will be sent to the editor pre-filled
-         collector-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
+
+            content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
+
+            collector-key: (required) this is the name of the label that will be added to all content created from this blueprint, and used to
+                           bring this content together on the index page.
+
+            collector-template-key: (optional) this is the moduleKey of the <content-template> that will be used to create an index page.
+                                    If none is provided, a default template will be used.
+
+            create-result: (optional) can be assigned the value of "view" or "edit".
+                "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
+                "edit": user will be sent to the editor pre-filled
+
+            collector-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <content-creator key="hello-blueprint-creator"
             content-template-key="hello-blueprint-page"
@@ -29,23 +50,45 @@
             collector-title-key="confluence.hello.blueprint.index.page.title"
             collector-key="hello-blueprint"/>
 
+
+    <!--
+        content-template defines an XML resource in Confluence Storage-Format.
+
+            key: (required) referenced by the respective <content-creator>
+
+            i18n-name-key: (optional) used only when viewing this plugin in the Plugin Manager
+
+            description: (optional) used only when viewing this plugin in the Plugin Manager
+
+            resource: (required) the XML file containing the template content
+
+            context-provider: (optional) if present, will provide extra key-value pairs to be substituted against
+                              <at:var> instances in the template
+    -->
     <content-template key="hello-blueprint-page"
-                      i18n-name-key="confluence.hello.blueprint.content.template.name"
-                      template-title-key="confluence.hello.blueprint.content.template.name">
+                      i18n-name-key="confluence.hello.blueprint.content.template.name">
         <description key="confluence.hello.blueprint.content.template.description"/>
         <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template.xml"/>
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HelloContextProvider"/>
     </content-template>
 
     <content-template key="hello-blueprint-index"
-                      i18n-name-key="confluence.hello.blueprint.index.template.name"
-                      template-title-key="confluence.hello.blueprint.index.template.name">
+                      i18n-name-key="confluence.hello.blueprint.index.template.name">
         <description key="confluence.hello.blueprint.index.template.description"/>
         <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/index.xml"/>
     </content-template>
 
     <resource type="i18n" name="i18n" location="com/atlassian/confluence/plugins/hello_blueprint/i18n"/>
 
+    <!--
+        (optional)
+
+        Provides JS and Soy resources if this Blueprint uses a JavaScript "wizard" to supply template variables, rather
+        than going directly to the edit or view screen.
+
+        dependency: (required) must depend on com.atlassian.confluence.plugins.confluence-create-content-plugin:content-creator-resources
+        context: (required) must be atl.general
+    -->
     <web-resource name="Resources" key="resources">
         <transformation extension="js">
             <transformer key="jsI18n"/>
