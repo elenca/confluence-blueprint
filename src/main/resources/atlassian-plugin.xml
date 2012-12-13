@@ -1,0 +1,65 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+
+    <!-- create-dialog-web-items allow the dialog launched from clicking the gloabl "Creaet" button to be extended. -->
+    <create-dialog-web-item key="hello-blueprint-item" i18n-name-key="confluence.hello.blueprint.name"
+            creator-key="hello-blueprint-creator">
+        <description key="confluence.hello.blueprint.description"/>
+        <resource name="icon" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/images/preview.png"/>
+    </create-dialog-web-item>
+
+    <!--
+         content-creator groups together the main blueprint concepts:
+         content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
+         collector-key: (required) this is the name of the label that will be added to all content created from this blueprint
+         collector-template-key: (optional) this is the moduleKey of the <content-template> that will be used to create an index page. If none is provided, a default template will be used.
+         create-result: (optional) can be assigned the value of "view" or "edit".
+            "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
+            "edit": user will be sent to the editor pre-filled
+    -->
+    <content-creator key="hello-blueprint-creator"
+            content-template-key="hello-blueprint-page"
+            collector-template-key="hello-blueprint-index"
+            create-result="edit"
+            collector-key="hello-blueprint"/> <!-- the value assigned to collector-key is the label that will added to the any content created from this blueprint -->
+
+    <content-template key="hello-blueprint-page"
+                      i18n-name-key="confluence.hello.blueprint.content.template.name"
+                      template-title-key="confluence.hello.blueprint.content.template.name">
+        <description key="confluence.hello.blueprint.content.template.description"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HelloContextProvider"/>
+    </content-template>
+
+    <content-template key="hello-blueprint-index"
+                      i18n-name-key="confluence.hello.blueprint.index.template.name"
+                      template-title-key="confluence.hello.blueprint.index.template.name">
+        <description key="confluence.hello.blueprint.index.template.description"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template.xml"/>
+    </content-template>
+
+    <resource type="i18n" name="i18n" location="com/atlassian/confluence/plugins/hello_blueprint/i18n"/>
+
+    <web-resource name="Resources" key="resources">
+        <transformation extension="js">
+            <transformer key="jsI18n"/>
+        </transformation>
+        <transformation extension="soy">
+            <transformer key="soyTransformer">
+                <functions>com.atlassian.confluence.plugins.soy:soy-core-functions</functions>
+            </transformer>
+        </transformation>
+
+        <resource type="download" name="main.css" location="com/atlassian/confluence/plugins/hello_blueprint/css/main.css" />
+        <resource type="download" name="templates-soy.js" location="com/atlassian/confluence/plugins/hello_blueprint/soy/templates.soy" />
+        <resource type="download" name="create-dialog-listener.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/create-dialog-listener.js" />
+
+        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:content-creator-resources</dependency>
+        <context>atl.general</context>
+    </web-resource>
+
+</atlassian-plugin>

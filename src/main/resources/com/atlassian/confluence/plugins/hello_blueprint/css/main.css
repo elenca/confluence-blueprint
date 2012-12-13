@@ -1,0 +1,31 @@
+.hello-blueprint-form-container {
+    margin: 0;
+    padding: 20px
+}
+
+#hello-blueprint-page-description {
+    resize: none;
+}
+
+#hello-blueprint-form input, #hello-blueprint-form textarea {
+    max-width: 300px;
+    width: 100%;
+    padding: 4px 5px;
+}
+
+.hello-blueprint-about {
+    float: right;
+    width: 300px;
+    padding: 20px;
+}
+
+.hello-blueprint-about > h1 {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* AUI overrides */
+
+#hello-blueprint-form fieldset {
+    padding: 0;
+}
