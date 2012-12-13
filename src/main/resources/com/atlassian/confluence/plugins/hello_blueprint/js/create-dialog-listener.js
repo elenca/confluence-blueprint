@@ -2,10 +2,18 @@
 
     function validate(dialog) {
         var $dialog = dialog.popup.element,
-            $titleField = $dialog.find("#hello-blueprint-page-title");
+            $titleField = $dialog.find("#hello-blueprint-page-title"),
+            $nameField = $dialog.find("#hello-blueprint-name");
+
+        $dialog.find(".error").html(""); // clear all existing errors
 
         if ($.trim($titleField.val()) == "") {
-            $titleField.focus().siblings(".error").html(AJS.I18n.getText("confluence.hello.blueprint.form.validation.name.required"));
+            $titleField.focus().siblings(".error").html(AJS.I18n.getText("confluence.hello.blueprint.form.validation.title.required"));
+            return false;
+        }
+
+        if ($.trim($nameField.val()) == "") {
+            $nameField.focus().siblings(".error").html(AJS.I18n.getText("confluence.hello.blueprint.form.validation.name.required"));
             return false;
         }
 
@@ -23,7 +31,7 @@
 
                 var title = $("#hello-blueprint-form *[name='title']").val();
                 var context = {
-                    description: $("#hello-blueprint-form *[name='description']").val() || ""
+                    name: $("#hello-blueprint-form *[name='name']").val() || "Fred"
                 };
                 createFn(title, context);
             };
@@ -42,7 +50,7 @@
         /* establish tab ordering */
         var $dialog = createDialog.popup.element;
         $dialog.find("#hello-blueprint-page-title").attr("tabindex", 10);
-        $dialog.find("#hello-blueprint-page-description").attr("tabindex", 15);
+        $dialog.find("#hello-blueprint-name").attr("tabindex", 15);
         $dialog.find(".hello-blueprint-create-button").attr("tabindex", 20);
         $dialog.find(".hello-blueprint-back-button").attr("tabindex", 25);
         $dialog.find(".hello-blueprint-cancel-link").attr("tabindex", 30);

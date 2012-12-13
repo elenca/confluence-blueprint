@@ -20,12 +20,14 @@
          create-result: (optional) can be assigned the value of "view" or "edit".
             "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
             "edit": user will be sent to the editor pre-filled
+         collector-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <content-creator key="hello-blueprint-creator"
             content-template-key="hello-blueprint-page"
             collector-template-key="hello-blueprint-index"
             create-result="edit"
-            collector-key="hello-blueprint"/> <!-- the value assigned to collector-key is the label that will added to the any content created from this blueprint -->
+            collector-title-key="confluence.hello.blueprint.index.page.title"
+            collector-key="hello-blueprint"/>
 
     <content-template key="hello-blueprint-page"
                       i18n-name-key="confluence.hello.blueprint.content.template.name"
@@ -39,7 +41,7 @@
                       i18n-name-key="confluence.hello.blueprint.index.template.name"
                       template-title-key="confluence.hello.blueprint.index.template.name">
         <description key="confluence.hello.blueprint.index.template.description"/>
-        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template.xml"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/index.xml"/>
     </content-template>
 
     <resource type="i18n" name="i18n" location="com/atlassian/confluence/plugins/hello_blueprint/i18n"/>

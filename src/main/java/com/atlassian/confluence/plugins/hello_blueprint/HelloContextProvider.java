@@ -3,6 +3,8 @@ package com.atlassian.confluence.plugins.hello_blueprint;
 import com.atlassian.plugin.PluginParseException;
 import com.atlassian.plugin.web.ContextProvider;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +20,7 @@ public class HelloContextProvider implements ContextProvider
     {
         Map<String, Object> result = new HashMap<String, Object>();
 
-        result.put("name", "Sherlock");
+        result.put("friendlyDate", DateFormat.getDateInstance(DateFormat.LONG).format(new Date()));
 
         return result;
     }

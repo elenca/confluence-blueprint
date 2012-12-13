@@ -12,13 +12,14 @@
 <form action="#" method="post" id="hello-blueprint-form" class="aui">
     <fieldset>
         <div class="field-group">
-            <label for="hello-blueprint-page-title">{getText('confluence.hello.blueprint.form.label.name')}<span class="aui-icon icon-required"> required</span></label>
-            <input id="hello-blueprint-page-title" class="text" type="text" name="title" title="title" placeholder="{getText('confluence.hello.blueprint.form.label.name.placeholder')}" maxlength="255">
+            <label for="hello-blueprint-page-title">{getText('confluence.hello.blueprint.form.label.title')}<span class="aui-icon icon-required"> required</span></label>
+            <input id="hello-blueprint-page-title" class="text" type="text" name="title" title="title" placeholder="{getText('confluence.hello.blueprint.form.label.title.placeholder')}" maxlength="255">
             <div class="error"></div>
         </div>
         <div class="field-group">
-            <label for="hello-blueprint-page-description">{getText('confluence.hello.blueprint.form.label.description')}</label>
-            <textarea id="hello-blueprint-page-description" class="textarea" name="description" rows="14" placeholder="{getText('confluence.hello.blueprint.form.label.description.placeholder')}"></textarea>
+            <label for="hello-blueprint-name">{getText('confluence.hello.blueprint.form.label.name')}<span class="aui-icon icon-required"> required</span></label>
+            <input id="hello-blueprint-name" class="text" type="text" name="name" title="name" placeholder="{getText('confluence.hello.blueprint.form.label.name.placeholder')}" maxlength="255">
+            <div class="error"></div>
         </div>
     </fieldset>
 </form>

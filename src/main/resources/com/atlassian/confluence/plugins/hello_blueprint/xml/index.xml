@@ -1,0 +1,7 @@
+<p>
+    <ac:macro ac:name="content-report-table">
+        <ac:parameter ac:name="labels"><at:var at:name="templateLabel"/></ac:parameter>
+        <ac:parameter ac:name="analytics-key"><at:var at:name="analyticsKey"/></ac:parameter>
+        <ac:parameter ac:name="spaces"><at:var at:name="spaceKey"/></ac:parameter>
+    </ac:macro>
+</p>

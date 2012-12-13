@@ -1,5 +1,7 @@
-<p><at:var at:name="description" /></p>
-
-<ac:macro ac:name='attachments'>
-    <ac:parameter ac:name='upload'>true</ac:parameter>
+<ac:macro ac:name="info">
+    <ac:parameter ac:name="title"><at:var at:name="panelTitle" /></ac:parameter>
+    <ac:rich-text-body>
+        <p>Hello <at:var at:name="name" /></p>
+        <p><at:var at:name="friendlyDate" /></p>
+    </ac:rich-text-body>
 </ac:macro>
