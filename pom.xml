@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.atlassian.confluence.plugins</groupId>
     <artifactId>hello-blueprint</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <organization>
         <name>Atlassian</name>
@@ -88,13 +88,18 @@
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.1</version>
             </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-amps-dispatcher-plugin</artifactId>
+                <version>${amps.version}</version>
+            </plugin>
         </plugins>
     </build>
 
     <properties>
         <confluence.version>5.0-m10</confluence.version>
         <confluence.data.version>4.3</confluence.data.version>
-        <amps.version>4.0</amps.version>
+        <amps.version>4.1.1</amps.version>
     </properties>
 
 </project>
