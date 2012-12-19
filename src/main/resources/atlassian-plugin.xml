@@ -31,24 +31,24 @@
 
             content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
 
-            collector-key: (required) this is the name of the label that will be added to all content created from this blueprint, and used to
+            index-key: (required) this is the name of the label that will be added to all content created from this blueprint, and used to
                            bring this content together on the index page.
 
-            collector-template-key: (optional) this is the moduleKey of the <content-template> that will be used to create an index page.
+            index-template-key: (optional) this is the moduleKey of the <content-template> that will be used to create an index page.
                                     If none is provided, a default template will be used.
 
             create-result: (optional) can be assigned the value of "view" or "edit".
                 "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
                 "edit": user will be sent to the editor pre-filled
 
-            collector-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
+            index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <content-creator key="hello-blueprint-creator"
             content-template-key="hello-blueprint-page"
-            collector-template-key="hello-blueprint-index"
+            index-template-key="hello-blueprint-index"
             create-result="edit"
-            collector-title-key="confluence.hello.blueprint.index.page.title"
-            collector-key="hello-blueprint"/>
+            index-title-key="confluence.hello.blueprint.index.page.title"
+            index-key="hello-blueprint"/>
 
 
     <!--
