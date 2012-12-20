@@ -28,12 +28,8 @@ public class HelloContextProvider implements ContextProvider
     @Override
     public Map<String, Object> getContextMap(Map<String, Object> context)
     {
-        // Due to a bug, the context is immutable so you have to declare a new Map. This will be fixed in the next
-        // milestone.
-        Map<String, Object> result = Maps.newHashMap();
+        context.put("friendlyDate", helloService.getFriendlyDate());
 
-        result.put("friendlyDate", helloService.getFriendlyDate());
-
-        return result;
+        return context;
     }
 }

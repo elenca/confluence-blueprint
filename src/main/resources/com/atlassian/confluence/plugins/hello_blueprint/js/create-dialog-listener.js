@@ -66,5 +66,5 @@
         return false;
     }
 
-    Confluence.ContentCreator.register('com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint-item', wizard);
+    Confluence.Blueprint.register('com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint-item', wizard);
 })(AJS.$);

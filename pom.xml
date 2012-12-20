@@ -64,16 +64,6 @@
                 <configuration>
                     <productVersion>${confluence.version}</productVersion>
                     <productDataVersion>${confluence.data.version}</productDataVersion>
-                    <instructions>
-                        <Import-Package>
-                            com.atlassian.confluence.plugins.createcontent.extensions,
-                            *
-                        </Import-Package>
-                        <!-- We shouldn't really need to export anything here, but this is necessary to support uploading via an OBR -->
-                        <Export-Package>
-                            com.atlassian.confluence.plugins.hello_blueprint
-                        </Export-Package>
-                    </instructions>
                 </configuration>
             </plugin>
             <plugin>
@@ -84,11 +74,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.1</version>
-            </plugin>
-            <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-amps-dispatcher-plugin</artifactId>
                 <version>${amps.version}</version>
@@ -97,7 +82,7 @@
     </build>
 
     <properties>
-        <confluence.version>5.0-m11</confluence.version>
+        <confluence.version>5.0-OD-25</confluence.version>
         <confluence.data.version>4.3</confluence.data.version>
         <amps.version>4.1.1</amps.version>
     </properties>

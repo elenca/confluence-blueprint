@@ -16,18 +16,18 @@
 
             resource: (required) the icon to be displayed in the dialog, must be a 200 x 150 px PNG
 
-            creator-key: (optional) if present, binds this web-item to the content-creator with the key. If omitted, no
+            blueprintKey: (optional) if present, binds this web-item to the blueprint with this key. If omitted, no
                          binding occurs and custom JavaScript + Java must create the content
     -->
-    <create-dialog-web-item key="hello-blueprint-item" i18n-name-key="confluence.hello.blueprint.name"
-            creator-key="hello-blueprint-creator">
+    <web-item key="hello-blueprint-item" i18n-name-key="confluence.hello.blueprint.name" section="system.create.dialog/content">
         <description key="confluence.hello.blueprint.description"/>
         <resource name="icon" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/images/preview.png"/>
-    </create-dialog-web-item>
+        <param name="blueprintKey" value="hello-blueprint"/>
+    </web-item>
 
 
     <!--
-         content-creator groups together the main blueprint concepts:
+         blueprint groups together the main blueprint concepts:
 
             content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
 
@@ -43,7 +43,7 @@
 
             index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
-    <content-creator key="hello-blueprint-creator"
+    <blueprint key="hello-blueprint"
             content-template-key="hello-blueprint-page"
             index-template-key="hello-blueprint-index"
             create-result="edit"
@@ -54,7 +54,7 @@
     <!--
         content-template defines an XML resource in Confluence Storage-Format.
 
-            key: (required) referenced by the respective <content-creator>
+            key: (required) referenced by the respective <blueprint>
 
             i18n-name-key: (optional) used only when viewing this plugin in the Plugin Manager
 
@@ -93,7 +93,7 @@
         Provides JS and Soy resources if this Blueprint uses a JavaScript "wizard" to supply template variables, rather
         than going directly to the edit or view screen.
 
-        dependency: (required) must depend on com.atlassian.confluence.plugins.confluence-create-content-plugin:content-creator-resources
+        dependency: (required) must depend on com.atlassian.confluence.plugins.confluence-create-content-plugin:blueprint-resources
         context: (required) must be atl.general
     -->
     <web-resource name="Resources" key="resources">
@@ -110,7 +110,7 @@
         <resource type="download" name="templates-soy.js" location="com/atlassian/confluence/plugins/hello_blueprint/soy/templates.soy" />
         <resource type="download" name="create-dialog-listener.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/create-dialog-listener.js" />
 
-        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:content-creator-resources</dependency>
+        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:blueprint-resources</dependency>
         <context>atl.general</context>
     </web-resource>
 
