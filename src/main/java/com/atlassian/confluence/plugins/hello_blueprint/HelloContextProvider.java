@@ -2,7 +2,6 @@ package com.atlassian.confluence.plugins.hello_blueprint;
 
 import com.atlassian.plugin.PluginParseException;
 import com.atlassian.plugin.web.ContextProvider;
-import com.google.common.collect.Maps;
 
 import java.util.Map;
 

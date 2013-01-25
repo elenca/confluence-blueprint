@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.atlassian.confluence.plugins</groupId>
             <artifactId>confluence-create-content-plugin</artifactId>
-            <version>1.0.23</version>
+            <version>1.2.18</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -82,7 +82,7 @@
     </build>
 
     <properties>
-        <confluence.version>5.0-OD-25</confluence.version>
+        <confluence.version>5.0-beta2</confluence.version>
         <confluence.data.version>4.3</confluence.data.version>
         <amps.version>4.1.1</amps.version>
     </properties>

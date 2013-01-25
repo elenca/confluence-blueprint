@@ -110,8 +110,9 @@
         <resource type="download" name="templates-soy.js" location="com/atlassian/confluence/plugins/hello_blueprint/soy/templates.soy" />
         <resource type="download" name="create-dialog-listener.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/create-dialog-listener.js" />
 
-        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:blueprint-resources</dependency>
+        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:resources</dependency>
         <context>atl.general</context>
+        <context>atl.admin</context>
     </web-resource>
 
 </atlassian-plugin>
