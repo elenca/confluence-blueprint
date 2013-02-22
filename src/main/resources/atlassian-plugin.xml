@@ -45,10 +45,49 @@
     -->
     <blueprint key="hello-blueprint"
             content-template-key="hello-blueprint-page"
-            index-template-key="hello-blueprint-index"
             create-result="edit"
+            index-template-key="hello-blueprint-index"
             index-title-key="confluence.hello.blueprint.index.page.title"
-            index-key="hello-blueprint"/>
+            index-key="hello-blueprint">
+        <!--
+            The dialog-wizard element defines a set of Wizard pages that will be shown when the User selects this
+            Blueprint. Pages will be shown to the user in the order they are defined, but this can be changed in the
+            Wizard JavaScript hooks (see create-dialog-listener.js).
+        -->
+        <dialog-wizard key="file-list-blueprint-wizard">
+            <!--
+                dialog-page defines a single page of the Wizard. This page can contain a description that is displayed
+                 at the right-hand-side of it. This element contains the following attributes:
+
+                - id - the id of this page, used with JavaScript hooks
+                - template-key - the fully-qualified path to a Soy template provided by this plugin (see web-resource)
+                - title-key - the i18n key for the title that will be displayed at the top of the Wizard page
+                - description-header-key - (optional) if specified, the i18n key for the heading above the description
+                - description-content-key - (optional) if specified, the i18n key for the description content. This
+                                            is required for the Description panel to appear in the page.
+                - last - (optional) if set to "true", the Wizard will be complete when this page is submitted. This is
+                         useful if the Wizard can have multiple paths. The last defined dialog-page gets this value set
+                         to "true" by default.
+            -->
+            <dialog-page id="choosePathPageId"
+                         template-key="Confluence.Blueprints.Hello.choosePathForm"
+                         title-key="confluence.hello.blueprint.dialog.choose.title"
+                         description-header-key="confluence.hello.blueprint.dialog.choose.heading"
+                         description-content-key="confluence.hello.blueprint.dialog.choose.description"/>
+            <dialog-page id="helloFormPageId"
+                         template-key="Confluence.Blueprints.Hello.helloFormPage"
+                         title-key="confluence.hello.blueprint.dialog.hello.title"
+                         description-header-key="confluence.hello.blueprint.dialog.hello.heading"
+                         description-content-key="confluence.hello.blueprint.dialog.hello.description"
+                         last="true"/>
+            <dialog-page id="searchFormPageId"
+                         template-key="Confluence.Blueprints.Hello.searchFormPage"
+                         title-key="confluence.hello.blueprint.dialog.tomorrow.title"/>
+            <dialog-page id="doSearchPageId"
+                         template-key="Confluence.Blueprints.Hello.doSearchPage"
+                         title-key="confluence.hello.blueprint.dialog.tomorrow.title"/>
+        </dialog-wizard>
+    </blueprint>
 
 
     <!--
