@@ -52,7 +52,7 @@
         <!--
             The dialog-wizard element defines a set of Wizard pages that will be shown when the User selects this
             Blueprint. Pages will be shown to the user in the order they are defined, but this can be changed in the
-            Wizard JavaScript hooks (see create-dialog-listener.js).
+            Wizard JavaScript hooks (see hello-blueprint-wizard.js).
         -->
         <dialog-wizard key="file-list-blueprint-wizard">
             <!--
@@ -147,7 +147,7 @@
 
         <resource type="download" name="main.css" location="com/atlassian/confluence/plugins/hello_blueprint/css/main.css" />
         <resource type="download" name="templates-soy.js" location="com/atlassian/confluence/plugins/hello_blueprint/soy/templates.soy" />
-        <resource type="download" name="create-dialog-listener.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/create-dialog-listener.js" />
+        <resource type="download" name="hello-blueprint-wizard.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/hello-blueprint-wizard.js" />
 
         <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:resources</dependency>
         <context>atl.general</context>
