@@ -82,10 +82,10 @@
                          last="true"/>
             <dialog-page id="searchFormPageId"
                          template-key="Confluence.Blueprints.Hello.searchFormPage"
-                         title-key="confluence.hello.blueprint.dialog.tomorrow.title"/>
+                         title-key="confluence.hello.blueprint.dialog.search.title"/>
             <dialog-page id="doSearchPageId"
                          template-key="Confluence.Blueprints.Hello.doSearchPage"
-                         title-key="confluence.hello.blueprint.dialog.tomorrow.title"/>
+                         title-key="confluence.hello.blueprint.dialog.search.title"/>
         </dialog-wizard>
     </blueprint>
 

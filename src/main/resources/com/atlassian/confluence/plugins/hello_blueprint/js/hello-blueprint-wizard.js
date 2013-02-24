@@ -62,7 +62,7 @@
         var greeting = state.pageData.greeting;
         if (greeting == "hello") {
             state.nextPageId = "helloFormPageId";
-        } else if (greeting == "tomorrow") {
+        } else if (greeting == "search") {
             state.nextPageId = "searchFormPageId";
         } else {
             // unknown radio button clicked, or none - don't allow page move until user fixes
