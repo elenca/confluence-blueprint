@@ -20,3 +20,5 @@
     module in the atlassian-plugin.xml file to be "view" and not "edit".<br/>
     If the result is "view", the new page will be created immediately and the user taken to it.
 </p>
+<!-- 'rawXhtml' parameter for 'var' makes this variable accept XHTML content without escaping it -->
+<p><at:var at:name="xhtmlString" at:rawXhtml='true'/></p>

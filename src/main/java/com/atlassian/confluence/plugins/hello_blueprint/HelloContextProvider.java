@@ -28,6 +28,9 @@ public class HelloContextProvider implements ContextProvider
     public Map<String, Object> getContextMap(Map<String, Object> context)
     {
         context.put("friendlyDate", helloService.getFriendlyDate());
+        // We're adding a string with HTML tags. It will be correctly rendered by our template
+        // (check var declaration at content-template.xml)
+        context.put("xhtmlString", "<em>Hello I am emphasised</em>");
 
         return context;
     }
