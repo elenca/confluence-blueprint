@@ -4,7 +4,6 @@
  * Chooser form: First step of the wizard gives user a choice of two pages to go to next.
  */
 {template .choosePathForm}
-<div class="hello-blueprint-form-container">
     <form action="#" method="post" class="aui">
         <fieldset class="group">
             <legend><span>{getText('confluence.hello.blueprint.form.choose.label')}</span></legend>
@@ -18,7 +17,6 @@
             </div>
         </fieldset>
     </form>
-</div>
 {/template}
 
 
@@ -26,7 +24,6 @@
  * Say Hello form: Second possible step, and last (check atlassian-plugin.xml, "last='true'" on this page description)
  */
 {template .helloFormPage}
-<div class="hello-blueprint-form-container">
     <form action="#" method="post" id="hello-blueprint-form" class="aui">
         <fieldset>
             <div class="field-group">
@@ -41,7 +38,6 @@
             </div>
         </fieldset>
     </form>
-</div>
 {/template}
 
 
@@ -49,7 +45,6 @@
  * Search form accepts a search term: another second possible step
  */
 {template .searchFormPage}
-<div class="hello-blueprint-form-container">
     <form action="#" method="post" id="hello-blueprint-form" class="aui">
         <fieldset>
             <h3>{getText('confluence.hello.blueprint.form.search.label.noDesc')}</h3>
@@ -60,7 +55,6 @@
             </div>
         </fieldset>
     </form>
-</div>
 {/template}
 
 /**
@@ -68,7 +62,5 @@
  * @param search your search query
  */
 {template .doSearchPage}
-<div class="hello-blueprint-form-container">
     <h2>{getText('confluence.hello.blueprint.form.title.passed', $search)}</h2>
-</div>
 {/template}
