@@ -44,7 +44,7 @@
             index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <blueprint key="hello-blueprint"
-            content-template-key="hello-blueprint-page"
+            content-template-key="hello-blueprint-content-template-a"
             create-result="edit"
             index-template-key="hello-blueprint-index"
             index-title-key="confluence.hello.blueprint.index.page.title"
@@ -104,11 +104,17 @@
             context-provider: (optional) if present, will provide extra key-value pairs to be substituted against
                               <at:var> instances in the template
     -->
-    <content-template key="hello-blueprint-page"
-                      i18n-name-key="confluence.hello.blueprint.content.template.name">
-        <description key="confluence.hello.blueprint.content.template.description"/>
-        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template.xml"/>
+    <content-template key="hello-blueprint-content-template-a"
+                      i18n-name-key="confluence.hello.blueprint.content.template.a.name">
+        <description key="confluence.hello.blueprint.content.template.a.description"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template-a.xml"/>
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HelloContextProvider"/>
+    </content-template>
+
+    <content-template key="hello-blueprint-content-template-b"
+            i18n-name-key="confluence.hello.blueprint.content.template.b.name">
+        <description key="confluence.hello.blueprint.content.template.b.description"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template-b.xml"/>
     </content-template>
 
     <content-template key="hello-blueprint-index"
