@@ -29,8 +29,6 @@
     <!--
          blueprint groups together the main blueprint concepts:
 
-            content-template-key: (required) this is the moduleKey of the <content-template> that will be used to create a page / content from
-
             index-key: (required) this is the name of the label that will be added to all content created from this blueprint, and used to
                            bring this content together on the index page.
 
@@ -44,11 +42,17 @@
             index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <blueprint key="hello-blueprint"
-            content-template-key="hello-blueprint-content-template-a"
             create-result="edit"
             index-template-key="hello-blueprint-index"
             index-title-key="confluence.hello.blueprint.index.page.title"
             index-key="hello-blueprint">
+        <!--
+            The content-template-key element(s) are the moduleKey(s) of the <content-template>(s) that will be used to
+            create a page / content from. These elements are required so that the templates can be edited from the
+            Space/Site Templates-admin screens.
+            -->
+        <content-template-key>hello-blueprint-content-template-a</content-template-key>
+        <content-template-key>hello-blueprint-content-template-b</content-template-key>
         <!--
             The dialog-wizard element defines a set of Wizard pages that will be shown when the User selects this
             Blueprint. Pages will be shown to the user in the order they are defined, but this can be changed in the
