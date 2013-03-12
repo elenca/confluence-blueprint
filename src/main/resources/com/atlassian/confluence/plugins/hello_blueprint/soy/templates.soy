@@ -36,6 +36,13 @@
                 <input id="hello-blueprint-name" class="text" type="text" name="name" title="name" placeholder="{getText('confluence.hello.blueprint.form.label.name.placeholder')}" maxlength="255">
                 <div class="error"></div>
             </div>
+            <div class="field-group">
+                <label for="hello-blueprint-template-key">{getText('confluence.hello.blueprint.form.label.template.key')}</label>
+                <select id="hello-blueprint-template-key" class="select" name="contentTemplateKey">
+                    <option value="hello-blueprint-content-template-a">{getText('confluence.hello.blueprint.form.label.template.key.a')}</option>
+                    <option value="hello-blueprint-content-template-b">{getText('confluence.hello.blueprint.form.label.template.key.b')}</option>
+                </select>
+            </div>
         </fieldset>
     </form>
 {/template}

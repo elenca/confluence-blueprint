@@ -6,7 +6,7 @@ import com.atlassian.plugin.web.ContextProvider;
 import java.util.Map;
 
 /**
- * This provider adds dynamic data for substitution into the content-template.xml \<at:var> elements.
+ * This provider adds dynamic data for substitution into the ContentTemplate's \<at:var> elements.
  *
  * For the sake of illustration, the provider in turn gets its data from an injected service.
  */
@@ -29,7 +29,7 @@ public class HelloContextProvider implements ContextProvider
     {
         context.put("friendlyDate", helloService.getFriendlyDate());
         // We're adding a string with HTML tags. It will be correctly rendered by our template
-        // (check var declaration at content-template.xml)
+        // (check var declaration at content-template-a.xml)
         context.put("xhtmlString", "<em>Hello I am emphasised</em>");
 
         return context;
