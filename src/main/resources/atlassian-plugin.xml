@@ -48,7 +48,8 @@
             create-result="edit"
             index-template-key="hello-blueprint-index"
             index-title-key="confluence.hello.blueprint.index.page.title"
-            index-key="hello-blueprint">
+            index-key="hello-blueprint"
+            how-to-use-template="Confluence.Blueprints.Hello.howToUse">
         <!--
             The dialog-wizard element defines a set of Wizard pages that will be shown when the User selects this
             Blueprint. Pages will be shown to the user in the order they are defined, but this can be changed in the
