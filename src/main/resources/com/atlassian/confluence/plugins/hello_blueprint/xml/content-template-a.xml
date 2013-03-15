@@ -20,5 +20,14 @@
     module in the atlassian-plugin.xml file to be "view" and not "edit".<br/>
     If the result is "view", the new page will be created immediately and the user taken to it.
 </p>
+<ul>
+    <li><ac:placeholder>This is an example of instruction text that will get replaced when a user selects the text and begins typing.</ac:placeholder></li>
+</ul>
+<ac:task-list>
+    <ac:task>
+        <ac:task-status>incomplete</ac:task-status>
+        <ac:task-body><ac:placeholder ac:type="mention">@mention example. This placeholder will automatically search for a user to mention in the page when the user begins typing.</ac:placeholder></ac:task-body>
+    </ac:task>
+</ac:task-list>
 <!-- 'rawXhtml' parameter for 'var' makes this variable accept XHTML content without escaping it -->
 <p><at:var at:name="xhtmlString" at:rawXhtml='true'/></p>
