@@ -107,7 +107,7 @@
 
     <blueprint key="view-result-blueprint"
                 create-result="view"
-                index-key="view-result-blueprint-index">
+                index-key="howdy-blueprint">
         <content-template ref="view-result-blueprint-content-template"/>
     </blueprint>
 
