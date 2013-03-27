@@ -16,4 +16,10 @@ public class DefaultHelloService implements HelloService
     {
         return DateFormat.getDateInstance(DateFormat.LONG).format(new Date());
     }
+
+    @Override
+    public String getFriendlyDateTime()
+    {
+        return DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG).format(new Date());
+    }
 }

@@ -25,6 +25,11 @@
         <param name="blueprintKey" value="hello-blueprint"/>
     </web-item>
 
+    <web-item key='view-result-blueprint-item' i18n-name-key='confluence.view.result.blueprint.name' section='system.create.dialog/content'>
+        <description key='confluence.view.result.blueprint.description'/>
+        <resource name='icon' type='download' location='com/atlassian/confluence/plugins/hello_blueprint/images/preview.png'/>
+        <param name='blueprintKey' value='view-result-blueprint'/>
+    </web-item>
 
     <!--
          blueprint groups together the main blueprint concepts:
@@ -94,6 +99,17 @@
         </dialog-wizard>
     </blueprint>
 
+    <!--
+        The view-result blueprint is an example of a very minimal blueprint.
+
+        It uses the "view" option for it's create-result which allows it to skip the editor and automatically create a page.
+     -->
+
+    <blueprint key="view-result-blueprint"
+                create-result="view"
+                index-key="view-result-blueprint-index">
+        <content-template ref="view-result-blueprint-content-template"/>
+    </blueprint>
 
     <!--
         content-template defines an XML resource in Confluence Storage-Format.
@@ -120,6 +136,13 @@
             i18n-name-key="confluence.hello.blueprint.content.template.b.name">
         <description key="confluence.hello.blueprint.content.template.b.description"/>
         <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/content-template-b.xml"/>
+    </content-template>
+
+    <content-template key="view-result-blueprint-content-template"
+            i18n-name-key="confluence.view.result.blueprint.content.template.name">
+        <description key="confluence.view.result.blueprint.content.template.description"/>
+        <resource name="template" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/xml/view-content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.ViewResultContextProvider"/>
     </content-template>
 
     <content-template key="hello-blueprint-index"
