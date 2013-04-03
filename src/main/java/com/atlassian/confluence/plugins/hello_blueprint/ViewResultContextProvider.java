@@ -11,6 +11,9 @@ import java.util.Map;
 
 import static com.atlassian.confluence.plugins.createcontent.actions.DefaultBlueprintContentGenerator.CONTENT_PAGE_TITLE_CONTEXT_KEY;
 
+/**
+ * This provider adds dynamic data for substitution into the ContentTemplate's \<at:var> elements for Howdy Blueprint.
+ */
 public class ViewResultContextProvider implements ContextProvider
 {
     private final LocaleManager localeManager;
