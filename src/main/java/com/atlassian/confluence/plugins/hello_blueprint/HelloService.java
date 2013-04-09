@@ -6,4 +6,6 @@ package com.atlassian.confluence.plugins.hello_blueprint;
 public interface HelloService
 {
     String getFriendlyDate();
+
+    String getFriendlyDateTime();
 }
