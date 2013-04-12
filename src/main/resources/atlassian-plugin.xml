@@ -39,12 +39,12 @@
                 "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
                 "edit": user will be sent to the editor pre-filled
 
-            index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
+            i18n-index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <blueprint key="hello-blueprint"
             create-result="edit"
             index-template-key="hello-blueprint-index"
-            index-title-key="confluence.hello.blueprint.index.page.title"
+            i18n-index-title-key="confluence.hello.blueprint.index.page.title"
             index-key="hello-blueprint"
             how-to-use-template="Confluence.Blueprints.Hello.howToUse">
         <!--
@@ -198,6 +198,61 @@
         <resource name="template" type="download"
                   location="com/atlassian/confluence/plugins/hello_blueprint/xml/view-content-template.xml"/>
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.ViewResultContextProvider"/>
+    </content-template>
+
+
+    <!--
+       The following modules are for a third distinct Blueprint.
+
+       This blueprint has child Blueprints, which create child Blueprint pages when the "root" Blueprint is created.
+       The child Blueprints must have content-templates that can be rendered with the context from any Wizard the root
+       Blueprint provides, plus any individual context-providers attached to those templates.
+
+       Note that the child Blueprints do not have associated Web-items - they are not displayed in the Create dialog.
+    -->
+
+    <web-item key='hierarchy-blueprint-item' i18n-name-key='confluence.hierarchy.blueprint.name'
+            section='system.create.dialog/content'>
+        <description key='confluence.hierarchy.blueprint.description'/>
+        <resource name='icon' type='download'
+                location='com/atlassian/confluence/plugins/hello_blueprint/images/preview.png'/>
+        <param name='blueprintKey' value='hierarchy-blueprint'/>
+    </web-item>
+
+    <blueprint key="hierarchy-blueprint" create-result="view" index-key="master-blueprint">
+        <content-template ref="hierarchy-blueprint-content-template"/>
+        <children>
+            <blueprint ref="hierarchy-child-a-blueprint"/>
+            <blueprint ref="hierarchy-child-b-blueprint"/>
+        </children>
+    </blueprint>
+    <content-template key="hierarchy-blueprint-content-template"
+            i18n-name-key="confluence.hierarchy.blueprint.content.template.name">
+        <description key="confluence.hierarchy.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyContextProvider"/>
+    </content-template>
+
+    <blueprint key="hierarchy-child-a-blueprint" index-key="child-blueprint-a" i18n-index-title-key="confluence.hierarchy.child.a.blueprint.name">
+        <content-template ref="hierarchy-child-a-content-template"/>
+    </blueprint>
+    <content-template key="hierarchy-child-a-content-template"
+            i18n-name-key="confluence.hierarchy.child.a.blueprint.content.template.name">
+        <description key="confluence.hierarchy.child.a.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-a-content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyChildAContextProvider"/>
+    </content-template>
+
+    <blueprint key="hierarchy-child-b-blueprint" index-key="child-blueprint-b" i18n-index-title-key="confluence.hierarchy.child.b.blueprint.name">
+        <content-template ref="hierarchy-child-b-content-template"/>
+    </blueprint>
+    <content-template key="hierarchy-child-b-content-template"
+            i18n-name-key="confluence.hierarchy.child.b.blueprint.content.template.name">
+        <description key="confluence.hierarchy.child.b.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-b-content-template.xml"/>
     </content-template>
 
 </atlassian-plugin>
