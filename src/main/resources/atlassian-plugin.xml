@@ -255,4 +255,35 @@
                 location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-b-content-template.xml"/>
     </content-template>
 
+
+    <!--
+        The following modules are for a Space Blueprint.
+        # home-page
+        ## page hierarchy
+        # sidebar-config
+        # theme
+        # enabled-blueprints
+        # default-blueprint
+    -->
+    <space-blueprint key="my-space-blueprint">
+        <home-page ref="hierarchy-blueprint"/>
+        <theme ref="my-theme-key"/>
+        <enabled-blueprints>
+            <!-- TODO - where is Blank page in this? Should be enabled-web-items? How does the user edit that? dT-->
+            <!-- TODO - does the order here matter? If so, what happens when the user adds further "ordered" BPs? -->
+            <blueprint ref="hello-blueprint-item"/>
+            <blueprint ref="view-result-blueprint-item"/>
+        </enabled-blueprints>
+        <!-- Needs to be a web-item, not a Blueprint. -->
+        <default-blueprint-item ref="view-result-blueprint-item"/>
+    </space-blueprint>
+
+    <theme key="my-theme-key" name="Simple Space Theme" class="com.atlassian.confluence.themes.BasicTheme">
+        <description>A simple example theme for all</description>
+        <param name="includeClassicStyles" value="false"/>
+        <resource type="download" name="default-theme.css" location="/includes/css/default-theme.css">
+            <param name="source" value="webContext"/>
+        </resource>
+    </theme>
+
 </atlassian-plugin>
