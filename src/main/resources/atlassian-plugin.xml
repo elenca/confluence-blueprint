@@ -265,7 +265,7 @@
         # enabled-blueprints
         # default-blueprint
     -->
-    <space-blueprint key="my-space-blueprint">
+    <space-blueprint key="my-space-blueprint" name="Hello Space Blueprint">
         <home-page ref="hierarchy-blueprint"/>
         <theme ref="my-theme-key"/>
         <enabled-blueprints>
