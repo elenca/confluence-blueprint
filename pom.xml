@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
     <parent>
         <groupId>com.atlassian.pom</groupId>
-        <artifactId>atlassian-closedsource-pom</artifactId>
-        <version>26.8</version>
+        <artifactId>atlassian-public-pom</artifactId>
+        <version>29.14</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.atlassian.confluence.plugins</groupId>
     <artifactId>hello-blueprint</artifactId>
@@ -21,6 +19,14 @@
     <name>Confluence Hello Blueprint</name>
     <description>This is the Confluence Hello Blueprint for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
+
+    <licenses>
+        <license>
+            <name>Atlassian 3.0 End User License Agreement</name>
+            <url>http://www.atlassian.com/end-user-agreement/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <scm>
         <connection>scm:git:git@bitbucket.org:atlassian/hello-blueprint.git</connection>
