@@ -76,6 +76,16 @@
                 <artifactId>maven-amps-dispatcher-plugin</artifactId>
                 <version>${amps.version}</version>
             </plugin>
+            <plugin>
+                <!-- Need this version of the Release Plugin to support GIT URLs properly -->
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.2</version>
+                <configuration>
+                    <!-- When using atlassian-public-pom as parent POM we need this configuration to skip tests, -->
+                    <!-- as command line arguments are ignored. -->
+                    <arguments>-Prelease -DskipTests</arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
