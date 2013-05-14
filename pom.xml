@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.atlassian.confluence.plugins</groupId>
     <artifactId>hello-blueprint</artifactId>
-    <version>1.2.5-SNAPSHOT</version>
+    <version>1.2.5</version>
 
     <organization>
         <name>Atlassian</name>
