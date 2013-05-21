@@ -218,14 +218,6 @@
                 location='com/atlassian/confluence/plugins/hello_blueprint/images/preview.png'/>
         <param name='blueprintKey' value='hierarchy-blueprint'/>
     </web-item>
-
-    <blueprint key="hierarchy-blueprint" create-result="view" index-key="master-blueprint">
-        <content-template ref="hierarchy-blueprint-content-template"/>
-        <children>
-            <blueprint ref="hierarchy-child-a-blueprint"/>
-            <blueprint ref="hierarchy-child-b-blueprint"/>
-        </children>
-    </blueprint>
     <content-template key="hierarchy-blueprint-content-template"
             i18n-name-key="confluence.hierarchy.blueprint.content.template.name">
         <description key="confluence.hierarchy.blueprint.content.template.description"/>
@@ -234,9 +226,6 @@
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyContextProvider"/>
     </content-template>
 
-    <blueprint key="hierarchy-child-a-blueprint" index-key="child-blueprint-a" i18n-index-title-key="confluence.hierarchy.child.a.blueprint.name">
-        <content-template ref="hierarchy-child-a-content-template"/>
-    </blueprint>
     <content-template key="hierarchy-child-a-content-template"
             i18n-name-key="confluence.hierarchy.child.a.blueprint.content.template.name">
         <description key="confluence.hierarchy.child.a.blueprint.content.template.description"/>
@@ -245,9 +234,6 @@
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyChildAContextProvider"/>
     </content-template>
 
-    <blueprint key="hierarchy-child-b-blueprint" index-key="child-blueprint-b" i18n-index-title-key="confluence.hierarchy.child.b.blueprint.name">
-        <content-template ref="hierarchy-child-b-content-template"/>
-    </blueprint>
     <content-template key="hierarchy-child-b-content-template"
             i18n-name-key="confluence.hierarchy.child.b.blueprint.content.template.name">
         <description key="confluence.hierarchy.child.b.blueprint.content.template.description"/>
@@ -263,19 +249,27 @@
         # sidebar-config
         # theme
         # enabled-blueprints
-        # default-blueprint
+        # default-blueprintdd
     -->
     <space-blueprint key="my-space-blueprint" name="Hello Space Blueprint">
-        <home-page ref="hierarchy-blueprint"/>
-        <theme ref="my-theme-key"/>
-        <enabled-blueprints>
+        <content-template ref="hierarchy-blueprint-content-template">
+            <content-template ref="hierarchy-child-a-content-template"/>
+            <content-template ref="hierarchy-child-b-content-template"/>
+        </content-template>
+        <!--<home-page ref="hierarchy-blueprint"/>-->
+        <!--<theme ref="my-theme-key"/>-->
+        <promoted-blueprints>
             <!-- TODO - where is Blank page in this? Should be enabled-web-items? How does the user edit that? dT-->
             <!-- TODO - does the order here matter? If so, what happens when the user adds further "ordered" BPs? -->
             <blueprint ref="hello-blueprint-item"/>
             <blueprint ref="view-result-blueprint-item"/>
-        </enabled-blueprints>
+        </promoted-blueprints>
         <!-- Needs to be a web-item, not a Blueprint. -->
         <default-blueprint-item ref="view-result-blueprint-item"/>
+        <space-creation-steps>
+            <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:restrictedUserSpaceCreationStep"/>
+            <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:watchSpaceCreationStep"/>
+        </space-creation-steps>
     </space-blueprint>
 
     <theme key="my-theme-key" name="Simple Space Theme" class="com.atlassian.confluence.themes.BasicTheme">
