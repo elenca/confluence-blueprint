@@ -244,23 +244,16 @@
 
     <!--
         The following modules are for a Space Blueprint.
-        # home-page
-        ## page hierarchy
-        # sidebar-config
-        # theme
-        # enabled-blueprints
-        # default-blueprintdd
+        # content-template
+        # dialog-wizard
     -->
     <space-blueprint key="my-space-blueprint" name="Hello Space Blueprint">
         <content-template ref="hierarchy-blueprint-content-template">
             <content-template ref="hierarchy-child-a-content-template"/>
             <content-template ref="hierarchy-child-b-content-template"/>
         </content-template>
-        <!--<home-page ref="hierarchy-blueprint"/>-->
         <!--<theme ref="my-theme-key"/>-->
         <promoted-blueprints>
-            <!-- TODO - where is Blank page in this? Should be enabled-web-items? How does the user edit that? dT-->
-            <!-- TODO - does the order here matter? If so, what happens when the user adds further "ordered" BPs? -->
             <blueprint ref="hello-blueprint-item"/>
             <blueprint ref="view-result-blueprint-item"/>
         </promoted-blueprints>
@@ -270,6 +263,14 @@
             <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:restrictedUserSpaceCreationStep"/>
             <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:watchSpaceCreationStep"/>
         </space-creation-steps>
+
+        <dialog-wizard key="my-space-blueprint-wizard">
+            <dialog-page id="spaceBasicDetailsId"
+                         template-key="Confluence.Templates.CreateSpace.createSpaceForm"
+                         title-key="confluence.hello.blueprint.dialog.choose.title"
+                         description-header-key="confluence.hello.blueprint.dialog.choose.heading"
+                         description-content-key="confluence.hello.blueprint.dialog.choose.description"/>
+        </dialog-wizard>
     </space-blueprint>
 
     <theme key="my-theme-key" name="Simple Space Theme" class="com.atlassian.confluence.themes.BasicTheme">
