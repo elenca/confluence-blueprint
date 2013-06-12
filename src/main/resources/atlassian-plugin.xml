@@ -39,12 +39,12 @@
                 "view": cause the editor to be bypassed - the required content will be created and the user immediately redirected to viewing it
                 "edit": user will be sent to the editor pre-filled
 
-            index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
+            i18n-index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
     <blueprint key="hello-blueprint"
             create-result="edit"
             index-template-key="hello-blueprint-index"
-            index-title-key="confluence.hello.blueprint.index.page.title"
+            i18n-index-title-key="confluence.hello.blueprint.index.page.title"
             index-key="hello-blueprint"
             how-to-use-template="Confluence.Blueprints.Hello.howToUse">
         <!--
