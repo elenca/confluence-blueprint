@@ -166,10 +166,6 @@
         <context>atl.admin</context>
     </web-resource>
 
-
-
-
-
     <!--
        The following modules are for a second distinct Blueprint.
 
@@ -199,5 +195,79 @@
                   location="com/atlassian/confluence/plugins/hello_blueprint/xml/view-content-template.xml"/>
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.ViewResultContextProvider"/>
     </content-template>
+
+
+    <!--
+       The following modules are for a third distinct Blueprint.
+
+       This blueprint has child Blueprints, which create child Blueprint pages when the "root" Blueprint is created.
+       The child Blueprints must have content-templates that can be rendered with the context from any Wizard the root
+       Blueprint provides, plus any individual context-providers attached to those templates.
+
+       Note that the child Blueprints do not have associated Web-items - they are not displayed in the Create dialog.
+    -->
+
+    <content-template key="hierarchy-blueprint-content-template"
+            i18n-name-key="confluence.hierarchy.blueprint.content.template.name">
+        <description key="confluence.hierarchy.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyContextProvider"/>
+    </content-template>
+
+    <content-template key="hierarchy-child-a-content-template"
+            i18n-name-key="confluence.hierarchy.child.a.blueprint.content.template.name">
+        <description key="confluence.hierarchy.child.a.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-a-content-template.xml"/>
+        <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.HierarchyChildAContextProvider"/>
+    </content-template>
+
+    <content-template key="hierarchy-child-b-content-template"
+            i18n-name-key="confluence.hierarchy.child.b.blueprint.content.template.name">
+        <description key="confluence.hierarchy.child.b.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-b-content-template.xml"/>
+    </content-template>
+
+
+    <!--
+        The following modules are for a Space Blueprint... COMING SOON!!!
+        # content-template
+        # dialog-wizard
+    -->
+    <space-blueprint key="my-space-blueprint" i18n-name-key="confluence.hello.space.blueprint.name">
+        <content-template ref="hierarchy-blueprint-content-template">
+            <content-template ref="hierarchy-child-a-content-template"/>
+            <content-template ref="hierarchy-child-b-content-template"/>
+        </content-template>
+        <!--<theme ref="my-theme-key"/>-->
+        <promoted-blueprints>
+            <blueprint ref="hello-blueprint-item"/>
+            <blueprint ref="view-result-blueprint-item"/>
+        </promoted-blueprints>
+        <!-- Needs to be a web-item, not a Blueprint. -->
+        <default-blueprint-item ref="view-result-blueprint-item"/>
+        <space-creation-steps>
+            <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:restrictedUserSpaceCreationStep"/>
+            <space-creation-step ref="com.atlassian.confluence.plugins.confluence-create-content-plugin:watchSpaceCreationStep"/>
+        </space-creation-steps>
+
+        <dialog-wizard key="my-space-blueprint-wizard">
+            <dialog-page id="spaceBasicDetailsId"
+                         template-key="Confluence.Templates.CreateSpace.createSpaceForm"
+                         title-key="confluence.hello.blueprint.dialog.choose.title"
+                         description-header-key="confluence.hello.blueprint.dialog.choose.heading"
+                         description-content-key="confluence.hello.blueprint.dialog.choose.description"/>
+        </dialog-wizard>
+    </space-blueprint>
+
+    <theme key="my-theme-key" name="Simple Space Theme" class="com.atlassian.confluence.themes.BasicTheme">
+        <description>A simple example theme for all</description>
+        <param name="includeClassicStyles" value="false"/>
+        <resource type="download" name="default-theme.css" location="/includes/css/default-theme.css">
+            <param name="source" value="webContext"/>
+        </resource>
+    </theme>
 
 </atlassian-plugin>
