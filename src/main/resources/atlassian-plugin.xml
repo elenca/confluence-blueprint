@@ -166,10 +166,6 @@
         <context>atl.admin</context>
     </web-resource>
 
-
-
-
-
     <!--
        The following modules are for a second distinct Blueprint.
 
@@ -211,13 +207,6 @@
        Note that the child Blueprints do not have associated Web-items - they are not displayed in the Create dialog.
     -->
 
-    <web-item key='hierarchy-blueprint-item' i18n-name-key='confluence.hierarchy.blueprint.name'
-            section='system.create.dialog/content'>
-        <description key='confluence.hierarchy.blueprint.description'/>
-        <resource name='icon' type='download'
-                location='com/atlassian/confluence/plugins/hello_blueprint/images/preview.png'/>
-        <param name='blueprintKey' value='hierarchy-blueprint'/>
-    </web-item>
     <content-template key="hierarchy-blueprint-content-template"
             i18n-name-key="confluence.hierarchy.blueprint.content.template.name">
         <description key="confluence.hierarchy.blueprint.content.template.description"/>
@@ -243,11 +232,11 @@
 
 
     <!--
-        The following modules are for a Space Blueprint.
+        The following modules are for a Space Blueprint... COMING SOON!!!
         # content-template
         # dialog-wizard
     -->
-    <space-blueprint key="my-space-blueprint" name="Hello Space Blueprint">
+    <space-blueprint key="my-space-blueprint" i18n-name-key="confluence.hello.space.blueprint.name">
         <content-template ref="hierarchy-blueprint-content-template">
             <content-template ref="hierarchy-child-a-content-template"/>
             <content-template ref="hierarchy-child-b-content-template"/>
