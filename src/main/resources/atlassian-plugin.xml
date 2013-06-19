@@ -5,7 +5,6 @@
         <vendor name="${project.organization.name}" url="${project.organization.url}" />
     </plugin-info>
 
-
     <!--
         create-dialog-web-item allows the dialog launched by clicking the global "Create" button to be extended.
 
@@ -19,12 +18,12 @@
             blueprintKey: (optional) if present, binds this web-item to the blueprint with this key. If omitted, no
                          binding occurs and custom JavaScript + Java must create the content
     -->
+
     <web-item key="hello-blueprint-item" i18n-name-key="confluence.hello.blueprint.name" section="system.create.dialog/content">
         <description key="confluence.hello.blueprint.description"/>
         <resource name="icon" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/images/preview.png"/>
         <param name="blueprintKey" value="hello-blueprint"/>
     </web-item>
-
 
     <!--
          blueprint groups together the main blueprint concepts:
@@ -41,6 +40,7 @@
 
             i18n-index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
+
     <blueprint key="hello-blueprint"
             create-result="edit"
             index-template-key="hello-blueprint-index"
@@ -93,7 +93,6 @@
                          title-key="confluence.hello.blueprint.dialog.search.title"/>
         </dialog-wizard>
     </blueprint>
-
 
     <!--
         content-template defines an XML resource in Confluence Storage-Format.
@@ -196,7 +195,6 @@
         <context-provider class="com.atlassian.confluence.plugins.hello_blueprint.ViewResultContextProvider"/>
     </content-template>
 
-
     <!--
        The following modules are for a third distinct Blueprint.
 
@@ -229,7 +227,6 @@
         <resource name="template" type="download"
                 location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-b-content-template.xml"/>
     </content-template>
-
 
     <!--
         The following modules are for a Space Blueprint... COMING SOON!!!
