@@ -233,6 +233,12 @@
         # content-template
         # dialog-wizard
     -->
+    <web-item key="hello-space-blueprint-item" i18n-name-key="confluence.hello.space.blueprint.name" section="system.create.space.dialog/content">
+        <description key="confluence.hello.blueprint.description"/>
+        <resource name="icon" type="download" location="com/atlassian/confluence/plugins/hello_blueprint/images/preview.png"/>
+        <param name="blueprintKey" value="my-space-blueprint"/>
+    </web-item>
+
     <space-blueprint key="my-space-blueprint" i18n-name-key="confluence.hello.space.blueprint.name">
         <content-template ref="hierarchy-blueprint-content-template">
             <content-template ref="hierarchy-child-a-content-template"/>
