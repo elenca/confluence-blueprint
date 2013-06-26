@@ -246,8 +246,8 @@
         </content-template>
         <!--<theme ref="my-theme-key"/>-->
         <promoted-blueprints>
-            <blueprint ref="hello-blueprint-item"/>
-            <blueprint ref="view-result-blueprint-item"/>
+            <blueprint ref="com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint"/>
+            <blueprint ref="com.atlassian.confluence.plugins.hello-blueprint:view-result-blueprint"/>
         </promoted-blueprints>
         <!-- Needs to be a web-item, not a Blueprint. -->
         <default-blueprint-item ref="view-result-blueprint-item"/>
