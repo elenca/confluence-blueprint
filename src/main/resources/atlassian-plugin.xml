@@ -41,7 +41,7 @@
             i18n-index-title-key: (optional) the i18n key for the title of the index page. Defaults to create-dialog-web-item name if none specified.
     -->
 
-    <blueprint key="hello-blueprint"
+    <blueprint key="hello-blueprint" name="Hello Blueprint" i18n-name-key="confluence.hello.blueprint.name"
             create-result="edit"
             index-template-key="hello-blueprint-index"
             i18n-index-title-key="confluence.hello.blueprint.index.page.title"
@@ -181,7 +181,7 @@
         <param name='blueprintKey' value='view-result-blueprint'/>
     </web-item>
 
-    <blueprint key="view-result-blueprint"
+    <blueprint key="view-result-blueprint" name="Howdy Blueprint" i18n-name-key='confluence.view.result.blueprint.name'
                create-result="view"
                index-key="howdy-blueprint">
         <content-template ref="view-result-blueprint-content-template"/>
