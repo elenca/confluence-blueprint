@@ -258,7 +258,7 @@
 
         <dialog-wizard key="my-space-blueprint-wizard">
             <dialog-page id="spaceBasicDetailsId"
-                         template-key="Confluence.Templates.CreateSpace.createSpaceForm"
+                         template-key="Confluence.Templates.Blueprints.CreateSpace.createSpaceForm"
                          title-key="confluence.hello.blueprint.dialog.choose.title"
                          description-header-key="confluence.hello.blueprint.dialog.choose.heading"
                          description-content-key="confluence.hello.blueprint.dialog.choose.description"/>
