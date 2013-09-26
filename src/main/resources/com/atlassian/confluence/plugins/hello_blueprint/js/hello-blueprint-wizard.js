@@ -8,7 +8,7 @@
  *
  * The example functions below show usage of the data that gets passed to these hooks
  */
-(function ($) {
+AJS.toInit(function($) {
 
     function validateRequiredField($container, fieldId, error) {
         var $field = $container.find(fieldId);
@@ -109,6 +109,11 @@
     }
 
     // Register wizard hooks
+    Confluence.Blueprint.setWizard('com.atlassian.confluence.plugins.hello-blueprint:hello-space-blueprint-item', function(wizard) {
+        wizard.on("pre-render.spaceBasicDetailsId", Confluence.SpaceBlueprint.CommonWizardBindings.preRender);
+        wizard.on("post-render.spaceBasicDetailsId", Confluence.SpaceBlueprint.CommonWizardBindings.postRender);
+        wizard.on("submit.spaceBasicDetailsId", Confluence.SpaceBlueprint.CommonWizardBindings.submit);
+    });
 
     Confluence.Blueprint.setWizard('com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint-item', function(wizard) {
         wizard.on("submit.choosePathPageId", choosePathSubmit);
@@ -122,4 +127,4 @@
         wizard.on("submit.doSearchPageId", doSearchSubmit);
     });
 
-})(AJS.$);
+});

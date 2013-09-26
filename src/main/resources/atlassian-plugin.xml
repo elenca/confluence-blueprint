@@ -160,6 +160,7 @@
         <resource type="download" name="hello-blueprint-wizard.js" location="com/atlassian/confluence/plugins/hello_blueprint/js/hello-blueprint-wizard.js" />
 
         <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:resources</dependency>
+        <dependency>com.atlassian.confluence.plugins.confluence-create-content-plugin:space-blueprints</dependency>
         <dependency>com.atlassian.confluence.plugins.confluence-space-ia:spacesidebar</dependency>
         <context>atl.general</context>
         <context>atl.admin</context>
