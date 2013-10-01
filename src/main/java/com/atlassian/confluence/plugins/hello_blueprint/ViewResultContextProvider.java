@@ -1,20 +1,18 @@
 package com.atlassian.confluence.plugins.hello_blueprint;
 
 import com.atlassian.confluence.languages.LocaleManager;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.AbstractBlueprintContextProvider;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.BlueprintContext;
 import com.atlassian.confluence.user.AuthenticatedUserThreadLocal;
 import com.atlassian.confluence.util.i18n.I18NBean;
 import com.atlassian.confluence.util.i18n.I18NBeanFactory;
-import com.atlassian.plugin.PluginParseException;
-import com.atlassian.plugin.web.ContextProvider;
-
-import java.util.Map;
 
 import static com.atlassian.confluence.plugins.createcontent.actions.DefaultBlueprintContentGenerator.CONTENT_PAGE_TITLE_CONTEXT_KEY;
 
 /**
  * This provider uses the helloService to generate the page title for the howdy blueprint.
  */
-public class ViewResultContextProvider implements ContextProvider
+public class ViewResultContextProvider extends AbstractBlueprintContextProvider
 {
     private final LocaleManager localeManager;
     private final I18NBeanFactory i18NBeanFactory;
@@ -28,14 +26,8 @@ public class ViewResultContextProvider implements ContextProvider
     }
 
     @Override
-    public void init(Map<String, String> params) throws PluginParseException
+    protected BlueprintContext updateBlueprintContext(BlueprintContext context)
     {
-    }
-
-    @Override
-    public Map<String, Object> getContextMap(Map<String, Object> context)
-    {
-
         final String pageTitle = i18nBean().getText("confluence.view.result.blueprint.content.title", new String[]{helloService.getFriendlyDateTime()});
 
         context.put(CONTENT_PAGE_TITLE_CONTEXT_KEY, pageTitle);

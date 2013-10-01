@@ -1,16 +1,14 @@
 package com.atlassian.confluence.plugins.hello_blueprint;
 
-import com.atlassian.plugin.PluginParseException;
-import com.atlassian.plugin.web.ContextProvider;
-
-import java.util.Map;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.AbstractBlueprintContextProvider;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.BlueprintContext;
 
 /**
  * This provider adds dynamic data for substitution into the ContentTemplate's \<at:var> elements.
  *
  * For the sake of illustration, the provider in turn gets its data from an injected service.
  */
-public class HelloContextProvider implements ContextProvider
+public class HelloContextProvider extends AbstractBlueprintContextProvider
 {
     private final HelloService helloService;
 
@@ -20,12 +18,7 @@ public class HelloContextProvider implements ContextProvider
     }
 
     @Override
-    public void init(Map<String, String> params) throws PluginParseException
-    {
-    }
-
-    @Override
-    public Map<String, Object> getContextMap(Map<String, Object> context)
+    protected BlueprintContext updateBlueprintContext(BlueprintContext context)
     {
         context.put("friendlyDate", helloService.getFriendlyDate());
         // We're adding a string with HTML tags. It will be correctly rendered by our template

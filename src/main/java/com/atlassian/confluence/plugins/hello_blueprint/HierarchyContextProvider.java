@@ -1,13 +1,11 @@
 package com.atlassian.confluence.plugins.hello_blueprint;
 
 import com.atlassian.confluence.languages.LocaleManager;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.AbstractBlueprintContextProvider;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.BlueprintContext;
 import com.atlassian.confluence.user.AuthenticatedUserThreadLocal;
 import com.atlassian.confluence.util.i18n.I18NBean;
 import com.atlassian.confluence.util.i18n.I18NBeanFactory;
-import com.atlassian.plugin.PluginParseException;
-import com.atlassian.plugin.web.ContextProvider;
-
-import java.util.Map;
 
 import static com.atlassian.confluence.plugins.createcontent.actions.DefaultBlueprintContentGenerator.CONTENT_PAGE_TITLE_CONTEXT_KEY;
 
@@ -16,7 +14,7 @@ import static com.atlassian.confluence.plugins.createcontent.actions.DefaultBlue
  *
  * @since 1.6
  */
-public class HierarchyContextProvider implements ContextProvider
+public class HierarchyContextProvider extends AbstractBlueprintContextProvider
 {
     private final LocaleManager localeManager;
     private final I18NBeanFactory i18NBeanFactory;
@@ -30,12 +28,7 @@ public class HierarchyContextProvider implements ContextProvider
     }
 
     @Override
-    public void init(Map<String, String> params) throws PluginParseException
-    {
-    }
-
-    @Override
-    public Map<String, Object> getContextMap(Map<String, Object> context)
+    protected BlueprintContext updateBlueprintContext(BlueprintContext context)
     {
         final String pageTitle = i18nBean().getText("confluence.hierarchy.blueprint.content.title", new String[]{helloService.getFriendlyDateTime()});
 

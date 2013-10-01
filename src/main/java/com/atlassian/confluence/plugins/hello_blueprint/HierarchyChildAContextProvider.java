@@ -1,24 +1,17 @@
 package com.atlassian.confluence.plugins.hello_blueprint;
 
-import com.atlassian.plugin.PluginParseException;
-import com.atlassian.plugin.web.ContextProvider;
-
-import java.util.Map;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.AbstractBlueprintContextProvider;
+import com.atlassian.confluence.plugins.createcontent.api.contextproviders.BlueprintContext;
 
 /**
  * Provides content for the "Hierarchy" Child A Blueprint.
  *
  * @since 1.6
  */
-public class HierarchyChildAContextProvider implements ContextProvider
+public class HierarchyChildAContextProvider extends AbstractBlueprintContextProvider
 {
     @Override
-    public void init(Map<String, String> params) throws PluginParseException
-    {
-    }
-
-    @Override
-    public Map<String, Object> getContextMap(Map<String, Object> context)
+    protected BlueprintContext updateBlueprintContext(BlueprintContext context)
     {
         context.put("foo", "bar");
 
