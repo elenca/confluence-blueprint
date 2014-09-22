@@ -245,7 +245,6 @@
             <content-template ref="hierarchy-child-a-content-template"/>
             <content-template ref="hierarchy-child-b-content-template"/>
         </content-template>
-        <!--<theme ref="my-theme-key"/>-->
         <promoted-blueprints>
             <blueprint ref="com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint"/>
             <blueprint ref="com.atlassian.confluence.plugins.hello-blueprint:view-result-blueprint"/>
