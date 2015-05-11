@@ -4,7 +4,7 @@ import com.atlassian.confluence.plugins.createcontent.api.contextproviders.Abstr
 import com.atlassian.confluence.plugins.createcontent.api.contextproviders.BlueprintContext;
 
 /**
- * This provider adds dynamic data for substitution into the ContentTemplate's \<at:var> elements.
+ * This provider adds dynamic data for substitution into the ContentTemplate's {@literal \<at:var>} elements.
  *
  * For the sake of illustration, the provider in turn gets its data from an injected service.
  */
