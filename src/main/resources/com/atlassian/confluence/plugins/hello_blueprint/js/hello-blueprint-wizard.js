@@ -70,6 +70,14 @@ AJS.toInit(function($) {
         }
     }
 
+    function helloPagePostRender(e, state) {
+        // Data passed into the Wizard when launching from, say, a "Create from template" macro button, will be
+        // available for processing. In this case, we set the "Title" field of the Wizard form to be the title passed in.
+        if (state.wizardData.title) {
+            state.$container.find('#hello-blueprint-page-title').val(state.wizardData.title);
+        }
+    }
+
     function helloPageOnSubmit(e, state) {
         return validateHelloForm(state);
     }
@@ -118,6 +126,7 @@ AJS.toInit(function($) {
     Confluence.Blueprint.setWizard('com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint-item', function(wizard) {
         wizard.on("submit.choosePathPageId", choosePathSubmit);
 
+        wizard.on("post-render.helloFormPageId", helloPagePostRender);
         wizard.on("submit.helloFormPageId", helloPageOnSubmit);
 
         wizard.on("post-render.searchFormPageId", searchFormPostRender);
