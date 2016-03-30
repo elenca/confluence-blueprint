@@ -84,10 +84,10 @@
     </build>
 
     <properties>
-        <confluence.version>5.3-beta3</confluence.version>
+        <confluence.version>5.9.7</confluence.version>
         <create-content.version>2.1.15</create-content.version>
-        <confluence.data.version>4.3</confluence.data.version>
-        <amps.version>4.1.1</amps.version>
+        <confluence.data.version>5.9.7</confluence.data.version>
+        <amps.version>6.2.1</amps.version>
     </properties>
 
 </project>
