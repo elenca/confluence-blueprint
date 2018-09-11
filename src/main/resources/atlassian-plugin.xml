@@ -229,6 +229,13 @@
                 location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-b-content-template.xml"/>
     </content-template>
 
+    <content-template key="hierarchy-child-c-content-template"
+                      i18n-name-key="confluence.hierarchy.child.c.blueprint.content.template.name">
+        <description key="confluence.hierarchy.child.c.blueprint.content.template.description"/>
+        <resource name="template" type="download"
+                  location="com/atlassian/confluence/plugins/hello_blueprint/xml/hierarchy-child-c-content-template.xml"/>
+    </content-template>
+
     <!--
         The following modules are for a Space Blueprint... COMING SOON!!!
         # content-template
@@ -244,6 +251,7 @@
         <content-template ref="hierarchy-blueprint-content-template">
             <content-template ref="hierarchy-child-a-content-template"/>
             <content-template ref="hierarchy-child-b-content-template"/>
+            <content-template ref="hierarchy-child-c-content-template"/>
         </content-template>
         <promoted-blueprints>
             <blueprint ref="com.atlassian.confluence.plugins.hello-blueprint:hello-blueprint"/>

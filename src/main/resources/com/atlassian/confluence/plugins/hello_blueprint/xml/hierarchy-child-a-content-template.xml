@@ -1,5 +1,93 @@
-<p>
-    This is a "child" Blueprint's page. It was created when the "master" Blueprint was created.<br/>
+<ac:layout><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <p>
+        This is a "child" Blueprint's page. It was created when the "master" Blueprint was created.<br/>
 
-    It includes some data from a context provider: <at:var at:name="foo" />
-</p>
+        It includes some data from a context provider: <at:var at:name="foo" />
+    </p>
+    <p class="auto-cursor-target"><br /></p><ac:structured-macro ac:name="info" ac:schema-version="1" ac:macro-id="5ad6f323-c233-4fc3-a6a6-1574e5c8b9f4"><ac:rich-text-body>
+    <p>Titel: 55 Zeichen inkl. Leerschlag</p>
+    <p>Bilder: mind. 3000x1690px, Format immer 16:9</p></ac:rich-text-body></ac:structured-macro><br />
+    <p>Keyfactbox</p>
+    <table class="wrapped relative-table" style="width: 88.4428%;"><colgroup><col style="width: 23.8531%;" /><col style="width: 38.7033%;" /></colgroup>
+        <tbody>
+            <tr>
+                <th>
+                    <p>Jetzige URL</p></th>
+                <td><br /></td></tr>
+            <tr>
+                <th>
+                    <p>Projekt (ganzer Projektname)</p></th>
+                <td><br /></td></tr>
+            <tr>
+                <th colspan="1">Projektart</th>
+                <td colspan="1"><br /></td></tr>
+            <tr>
+                <th colspan="1">Forschungsfeld</th>
+                <td colspan="1"><br /></td></tr>
+            <tr>
+                <th>
+                    <p>Schlagworte</p></th>
+                <td><br /></td></tr></tbody></table>
+    <p class="auto-cursor-target"><br /></p></ac:layout-cell><ac:layout-cell>
+    <p class="auto-cursor-target"><br /></p>
+    <table class="wrapped relative-table" style="width: 84.0449%;"><colgroup><col style="width: 54.6377%;" /><col style="width: 45.3902%;" /></colgroup>
+        <tbody>
+            <tr>
+                <th>Projektstart</th>
+                <td>
+                    <div class="content-wrapper">
+                        <p><time datetime="2018-01-01" />&nbsp;</p></div></td></tr>
+            <tr>
+                <th>Projektende</th>
+                <td>
+                    <div class="content-wrapper">
+                        <p><time datetime="2018-12-31" />&nbsp;</p></div></td></tr>
+            <tr>
+                <th colspan="1">Projektstatus</th>
+                <td colspan="1">
+                    <div class="content-wrapper">
+                        <p><ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="24223422-c07f-4282-aa77-6c791b95397c"><ac:parameter ac:name="colour">Yellow</ac:parameter><ac:parameter ac:name="title">In progress</ac:parameter></ac:structured-macro></p></div></td></tr>
+            <tr>
+                <th>Lead (Institut)</th>
+                <td>SII</td></tr>
+            <tr>
+                <th colspan="1">Leitung (Person)</th>
+                <td colspan="1"><ac:link><ri:user ri:userkey="8a807e945f76f2b3015f779db5fe0ed4" /></ac:link></td></tr>
+            <tr>
+                <th>
+                    <p>Projektpartner</p>
+                    <p>Beteiligte Institute, Zentren und Labore</p>
+                    <p>(optional) (auch extern)</p></th>
+                <td>
+                    <div class="content-wrapper">
+                        <p><ac:link><ri:user ri:userkey="8a807e945f76f2b3015f779db5fe0ed4" /></ac:link>&nbsp;(Projektleiter)</p>
+                        <p><ac:link><ri:user ri:userkey="8a807e945f76f2b3015f779dab6e05ec" /></ac:link></p>
+                        <p><ac:link><ri:user ri:userkey="8a807e945f76f2b3015f779db1860bae" /></ac:link></p>
+                        <p><ac:link><ri:user ri:userkey="8a807e945f76f2b3015f779dbcfc15b7" /></ac:link></p></div></td></tr>
+            <tr>
+                <th>Team (k&ouml;nnen auch extern sein)</th>
+                <td><br /></td></tr></tbody></table>
+    <p class="auto-cursor-target"><br /></p></ac:layout-cell></ac:layout-section><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <h2>Abstract/Einleitungstext</h2>
+    <p><em>Beschrieb Projekt, mindestens 500 Zeichen</em></p>
+    <p><em><br /></em></p>
+    <h2>Kurzbeschrieb f&uuml;r Teasertexte und Google</h2>
+    <p><em>300 Zeichen inkl. Leerzeichen</em></p>
+    <p><br /></p>
+    <p><em><br /></em></p></ac:layout-cell><ac:layout-cell>
+    <h2>Verwandte Projekte (optional)</h2>
+    <p><br /></p></ac:layout-cell></ac:layout-section><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <h2>Downloads (optional)</h2>
+    <p><br /></p></ac:layout-cell><ac:layout-cell>
+    <p><br /></p></ac:layout-cell></ac:layout-section><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <h2>Publikationen (optional)</h2>
+    <p><br /></p></ac:layout-cell><ac:layout-cell>
+    <p><br /></p></ac:layout-cell></ac:layout-section><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <h2>Weiterf&uuml;hrende Information (optional)</h2>
+    <p><em>Links auf externe Seiten, Partnerseiten</em></p>
+    <p><br /></p></ac:layout-cell><ac:layout-cell>
+    <p><br /></p></ac:layout-cell></ac:layout-section><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <h2>In den Medien (optional)</h2>
+    <p><br /></p></ac:layout-cell><ac:layout-cell>
+    <p><br /></p></ac:layout-cell></ac:layout-section>
+</ac:layout>

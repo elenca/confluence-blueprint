@@ -1,0 +1,14 @@
+<ac:layout>
+    <ac:layout-section ac:type="single">
+        <ac:layout-cell>
+            <!-- <h2><at:i18n at:key="confluence.hello.space.blueprint.home.children.heading" /></h2> -->
+            <h2><at:var at:name="spaceHomepageHeading"/></h2>
+            <p>
+                <ac:macro ac:name="children">
+                    <ac:parameter ac:name="page"></ac:parameter>
+                    <ac:parameter ac:name="all">true</ac:parameter>
+                </ac:macro>
+            </p>
+        </ac:layout-cell>
+    </ac:layout-section>
+</ac:layout>

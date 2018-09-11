@@ -1,3 +1,26 @@
-<p>
-    This is the "master" Blueprint's page. It has child pages for each of the child Blueprints this Blueprint defines.
-</p>
+<ac:layout><ac:layout-section ac:type="two_right_sidebar"><ac:layout-cell>
+    <p><ac:structured-macro ac:name="status" ac:schema-version="1" ac:macro-id="75a0660d-069b-4e17-a126-6493c250a381"><ac:parameter ac:name="colour">Green</ac:parameter><ac:parameter ac:name="title">Bewilligt</ac:parameter></ac:structured-macro></p>
+    <p><br /></p>
+    <p><ac:structured-macro ac:name="blog-posts" ac:schema-version="1" ac:macro-id="f333ce46-d9b4-440f-a792-f12b07112f5f"><ac:parameter ac:name="max">3</ac:parameter><ac:parameter ac:name="sort">modified</ac:parameter><ac:parameter ac:name="time">10d</ac:parameter><ac:parameter ac:name="content">titles</ac:parameter></ac:structured-macro></p>
+    <p>
+        HTW: This is the "master" Blueprint's page. It has child pages for each of the child Blueprints this Blueprint defines.
+    </p>
+    <h2>Meine Aufgaben // <a href="http://pcnoteb573:1990/confluence/">Alle Aufgaben anzeigen</a></h2>
+    <p><ac:structured-macro ac:name="tasks-report-macro" ac:schema-version="1" ac:macro-id="29aa59c4-e7d1-4458-8140-f3616aef6a7e"><ac:parameter ac:name="columns">description,duedate,location</ac:parameter><ac:parameter ac:name="spaces">PW</ac:parameter><ac:parameter ac:name="assignees"><ri:user ri:userkey="8a807e945f76f2b3015f779dab6e05ec" /></ac:parameter><ac:parameter ac:name="pageSize">10</ac:parameter></ac:structured-macro></p>
+    <p><ac:structured-macro ac:name="excerpt-include" ac:schema-version="1" ac:macro-id="cd616eff-5c70-4251-b51c-793b4f97b98d"><ac:parameter ac:name=""><ac:link><ri:page ri:content-title="Projektausf&uuml;hrung" /></ac:link></ac:parameter></ac:structured-macro></p>
+    <p><br /></p></ac:layout-cell><ac:layout-cell>
+    <p class="auto-cursor-target"><br /></p><ac:structured-macro ac:name="warning" ac:schema-version="1" ac:macro-id="82a6d289-29f2-43e2-bb4d-5ecaab85aef9"><ac:parameter ac:name="title">Mitteilungen der Projektleitung</ac:parameter><ac:rich-text-body>Hier bitte wichtige Mitteilungen erfassen. (Men&uuml;&gt;<a href="http://confltest.fh-htwchur.ch:8090/pages/editpage.action?pageId=41681144">Bearbeiten</a> w&auml;hlen)</ac:rich-text-body></ac:structured-macro>
+    <p class="auto-cursor-target"><br /></p><ac:structured-macro ac:name="panel" ac:schema-version="1" ac:macro-id="f6f10305-21ac-44bb-85d2-038284cea01b"><ac:rich-text-body>
+    <p><ac:structured-macro ac:name="recently-updated" ac:schema-version="1" ac:macro-id="ccc10067-a22c-427c-bbe0-f1b704dd7402"><ac:parameter ac:name="types">page, comment, blogpost</ac:parameter><ac:parameter ac:name="max">5</ac:parameter><ac:parameter ac:name="hideHeading">true</ac:parameter><ac:parameter ac:name="theme">social</ac:parameter></ac:structured-macro></p></ac:rich-text-body></ac:structured-macro>
+    <p class="auto-cursor-target"><br /></p><ac:structured-macro ac:name="panel" ac:schema-version="1" ac:macro-id="c16ca808-287d-4f07-bae7-9bd50b966d9e"><ac:rich-text-body>
+    <h2>Projektlinks</h2>
+    <ul>
+        <li>z.B. Referenz-Projekt</li></ul>
+    <h2>Wichtige Links</h2>
+    <ul>
+        <li>z.B. Git Repository</li>
+        <li><ac:link><ri:page ri:content-title="Ressourcen" /><ac:plain-text-link-body><![CDATA[Weitere Ressourcen]]></ac:plain-text-link-body></ac:link></li></ul></ac:rich-text-body></ac:structured-macro>
+    <p class="auto-cursor-target"><br /></p>
+    <p><br /></p>
+    <p><br /></p></ac:layout-cell></ac:layout-section>
+</ac:layout>
